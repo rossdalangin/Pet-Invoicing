@@ -182,7 +182,7 @@ class Quote_To_Invoice_Admin {
 	 *
 	 * @since    1.0.0
 	 */
-	public function generate_quote( $post_id, $post ) {
+	public function generate_quote( $post_id, $post, $update ) {
 		if ( $post->post_type !== 'qti_quote' ) {
 			return;
 		}
