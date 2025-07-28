@@ -254,7 +254,7 @@ class Quote_To_Invoice_Public {
 	 * @since    1.0.0
 	 */
 	public function load_page_template( $template ) {
-		if ( get_page_template_slug() === 'template-customer-dashboard.php' ) {
+		if ( get_post_meta( get_the_ID(), '_wp_page_template', true ) === 'template-customer-dashboard.php' ) {
 			$template = QTI_PLUGIN_DIR . 'public/partials/template-customer-dashboard.php';
 		}
 
