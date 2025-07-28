@@ -177,10 +177,17 @@ class Quote_To_Invoice_Public {
 			$customer_id = $wpdb->insert_id;
 
 			// Create a new quote.
+			$quote_id = wp_insert_post( array(
+				'post_title'  => 'Quote for ' . $first_name . ' ' . $last_name,
+				'post_status' => 'publish',
+				'post_type'   => 'qti_quote',
+			) );
+
 			$table_name = $wpdb->prefix . 'qti_quotes';
 			$wpdb->insert(
 				$table_name,
 				array(
+					'id'                  => $quote_id,
 					'customer_id'         => $customer_id,
 					'pet_name'            => $pet_name,
 					'pet_type'            => $pet_type,
@@ -193,7 +200,6 @@ class Quote_To_Invoice_Public {
 					'created_at'          => current_time( 'mysql' ),
 				)
 			);
-			$quote_id = $wpdb->insert_id;
 
 			// Trigger the new quote action.
 			// do_action( 'qti_new_quote', $quote_id );
