@@ -202,7 +202,7 @@ class Quote_To_Invoice_Public {
 			);
 
 			// Trigger the new quote action.
-			// do_action( 'qti_new_quote', $quote_id );
+			do_action( 'save_post_qti_quote', $quote_id, get_post( $quote_id ), false );
 
 			// Redirect to a success page.
 			wp_redirect( home_url( '/quote-submitted/' ) );
