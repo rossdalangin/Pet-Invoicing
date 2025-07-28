@@ -244,7 +244,11 @@ class Quote_To_Invoice_Public {
 	 * @since    1.0.0
 	 */
 	public function register_page_templates( $templates ) {
-		$templates['template-customer-dashboard.php'] = __( 'Customer Dashboard', 'quote-to-invoice' );
+		if ( version_compare( get_bloginfo( 'version' ), '4.7', '<' ) ) {
+			$templates['public/partials/template-customer-dashboard.php'] = __( 'Customer Dashboard', 'quote-to-invoice' );
+		} else {
+			$templates['template-customer-dashboard.php'] = __( 'Customer Dashboard', 'quote-to-invoice' );
+		}
 
 		return $templates;
 	}
