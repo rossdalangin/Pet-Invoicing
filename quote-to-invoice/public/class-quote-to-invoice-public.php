@@ -201,8 +201,9 @@ class Quote_To_Invoice_Public {
 				)
 			);
 
-			// Trigger the new quote action.
-			do_action( 'save_post_qti_quote', $quote_id, get_post( $quote_id ), false );
+			// Generate the quote.
+			$plugin_admin = new Quote_To_Invoice_Admin( 'quote-to-invoice', '1.0.0' );
+			$plugin_admin->generate_quote( $quote_id, get_post( $quote_id ), false );
 
 			// Redirect to a success page.
 			wp_redirect( home_url( '/quote-submitted/' ) );

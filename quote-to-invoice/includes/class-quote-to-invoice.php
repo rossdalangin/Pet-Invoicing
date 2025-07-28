@@ -158,7 +158,6 @@ class Quote_To_Invoice {
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
 		$this->loader->add_action( 'init', $plugin_admin, 'register_post_types' );
 		$this->loader->add_action( 'admin_menu', $plugin_admin, 'add_menu_page' );
-		$this->loader->add_action( 'save_post_qti_quote', $plugin_admin, 'generate_quote' );
 		$this->loader->add_action( 'add_meta_boxes', $plugin_admin, 'add_nanny_meta_box' );
 		$this->loader->add_action( 'save_post_qti_order', $plugin_admin, 'save_nanny' );
 		$this->loader->add_action( 'add_meta_boxes', $plugin_admin, 'add_invoice_meta_box' );
