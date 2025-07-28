@@ -49,3 +49,21 @@ This plugin can generate HTML invoices for orders. To generate an invoice, go to
 ## Branding
 
 To add your own logo to the invoices, replace the `logo.png` file in the `assets/images` directory.
+
+## Testing
+
+To test the plugin, follow these steps:
+
+1.  **Activate the plugin.**
+2.  **Create a new page and add the `[quote_request_form]` shortcode to the content.**
+3.  **View the page and submit the quote request form.**
+4.  **Check that you are redirected to the "Quote Submitted" page.**
+5.  **Go to the "Quotes" menu in the WordPress admin and check that the new quote has been created.**
+6.  **Go to the "Users" menu and check that a new user has been created with the "Customer" role.**
+7.  **Log in as the new user and go to the "Customer Dashboard" page.**
+8.  **Check that you can see the new quote.**
+9.  **Log out and log back in as an admin.**
+10. **Go to the "Orders" menu and create a new order.**
+11. **Assign a nanny to the order.**
+12. **Generate an invoice for the order.**
+13. **Log in as the nanny and check that you can see the order.**
