@@ -211,6 +211,9 @@ class Quote_To_Invoice_Admin {
 				'id' => $post_id,
 			)
 		);
+
+		// Trigger the new quote action.
+		do_action( 'qti_new_quote', $post_id );
 	}
 
 	/**

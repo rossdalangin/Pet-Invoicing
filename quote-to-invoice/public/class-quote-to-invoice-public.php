@@ -196,7 +196,7 @@ class Quote_To_Invoice_Public {
 			$quote_id = $wpdb->insert_id;
 
 			// Trigger the new quote action.
-			do_action( 'qti_new_quote', $quote_id );
+			// do_action( 'qti_new_quote', $quote_id );
 
 			// Redirect to a success page.
 			wp_redirect( home_url( '/quote-submitted/' ) );
