@@ -22,6 +22,7 @@ class Quote_To_Invoice_Activator {
 	public static function activate() {
 		self::create_tables();
 		self::add_roles();
+		self::create_pages();
 	}
 
 	/**
@@ -129,6 +130,26 @@ class Quote_To_Invoice_Activator {
 		add_role( 'qti_customer', __( 'Customer', 'quote-to-invoice' ), array( 'read' => true ) );
 		add_role( 'qti_nanny', __( 'Nanny', 'quote-to-invoice' ), array( 'read' => true, 'edit_posts' => true ) );
 		add_role( 'qti_coordinator', __( 'Coordinator', 'quote-to-invoice' ), array( 'read' => true, 'edit_posts' => true, 'publish_posts' => true, 'delete_posts' => true ) );
+	}
+
+	/**
+	 * Create the "Quote Submitted" page.
+	 *
+	 * @since    1.0.0
+	 */
+	public static function create_pages() {
+		$page_title = 'Quote Submitted';
+		$page_content = 'Thank you for your quote request. We will get back to you shortly.';
+		$page = get_page_by_title( $page_title );
+
+		if ( ! $page ) {
+			$page_id = wp_insert_post( array(
+				'post_title'   => $page_title,
+				'post_content' => $page_content,
+				'post_status'  => 'publish',
+				'post_type'    => 'page',
+			) );
+		}
 	}
 
 }
