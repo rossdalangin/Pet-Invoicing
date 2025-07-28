@@ -162,20 +162,6 @@ class Quote_To_Invoice_Activator {
 				'post_type'    => 'page',
 			) );
 		}
-
-		$page_title = 'Customer Dashboard';
-		$page_content = '[customer_dashboard]';
-		$page = get_page_by_title( $page_title );
-
-		if ( ! $page ) {
-			$page_id = wp_insert_post( array(
-				'post_title'   => $page_title,
-				'post_content' => $page_content,
-				'post_status'  => 'publish',
-				'post_type'    => 'page',
-			) );
-			add_post_meta( $page_id, '_wp_page_template', 'template-customer-dashboard.php' );
-		}
 	}
 
 }

@@ -240,6 +240,30 @@ class Quote_To_Invoice_Public {
 
 
 	/**
+	 * Register the page templates.
+	 *
+	 * @since    1.0.0
+	 */
+	public function register_page_templates( $templates ) {
+		$templates['template-customer-dashboard.php'] = __( 'Customer Dashboard', 'quote-to-invoice' );
+
+		return $templates;
+	}
+
+	/**
+	 * Load the page template.
+	 *
+	 * @since    1.0.0
+	 */
+	public function load_page_template( $template ) {
+		if ( get_post_meta( get_the_ID(), '_wp_page_template', true ) === 'template-customer-dashboard.php' ) {
+			$template = QTI_PLUGIN_DIR . 'public/partials/template-customer-dashboard.php';
+		}
+
+		return $template;
+	}
+
+	/**
 	 * The [customer_quotes] shortcode.
 	 *
 	 * @since    1.0.0
