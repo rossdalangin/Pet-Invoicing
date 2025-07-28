@@ -247,10 +247,10 @@ class Quote_To_Invoice_Admin {
 	 * @since    1.0.0
 	 */
 	public function display_admin_dashboard() {
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-qti-quotes-list-table.php';
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-qti-orders-list-table.php';
+		require_once QTI_PLUGIN_DIR . 'admin/class-qti-quotes-list-table.php';
+		require_once QTI_PLUGIN_DIR . 'admin/class-qti-orders-list-table.php';
 
-		include_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/partials/admin-dashboard.php';
+		include_once QTI_PLUGIN_DIR . 'admin/partials/admin-dashboard.php';
 	}
 
 	/**
@@ -275,7 +275,7 @@ class Quote_To_Invoice_Admin {
 	 * @since    1.0.0
 	 */
 	public function display_nanny_meta_box( $post ) {
-		include_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/partials/nanny-meta-box.php';
+		include_once QTI_PLUGIN_DIR . 'admin/partials/nanny-meta-box.php';
 	}
 
 	/**

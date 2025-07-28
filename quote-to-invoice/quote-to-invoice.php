@@ -17,11 +17,14 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
+define( 'QTI_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
+define( 'QTI_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
+
 /**
  * The code that runs during plugin activation.
  */
 function activate_quote_to_invoice() {
-	require_once plugin_dir_path( __FILE__ ) . 'includes/class-quote-to-invoice-activator.php';
+	require_once QTI_PLUGIN_DIR . 'includes/class-quote-to-invoice-activator.php';
 	Quote_To_Invoice_Activator::activate();
 }
 
@@ -29,7 +32,7 @@ function activate_quote_to_invoice() {
  * The code that runs during plugin deactivation.
  */
 function deactivate_quote_to_invoice() {
-	require_once plugin_dir_path( __FILE__ ) . 'includes/class-quote-to-invoice-deactivator.php';
+	require_once QTI_PLUGIN_DIR . 'includes/class-quote-to-invoice-deactivator.php';
 	Quote_To_Invoice_Deactivator::deactivate();
 }
 
@@ -40,7 +43,7 @@ register_deactivation_hook( __FILE__, 'deactivate_quote_to_invoice' );
  * The core plugin class that is used to define internationalization,
  * admin-specific hooks, and public-facing site hooks.
  */
-require plugin_dir_path( __FILE__ ) . 'includes/class-quote-to-invoice.php';
+require QTI_PLUGIN_DIR . 'includes/class-quote-to-invoice.php';
 
 /**
  * Begins execution of the plugin.

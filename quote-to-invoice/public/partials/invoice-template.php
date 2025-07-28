@@ -68,7 +68,7 @@
 					<table>
 						<tr>
 							<td class="title">
-								<img src="<?php echo plugin_dir_url( __FILE__ ) . '../../assets/images/logo.png'; ?>" style="width:100%; max-width:300px;">
+								<img src="<?php echo QTI_PLUGIN_URL . 'assets/images/logo.png'; ?>" style="width:100%; max-width:300px;">
 							</td>
 							<td>
 								Invoice #: <?php echo $order->id; ?><br>
