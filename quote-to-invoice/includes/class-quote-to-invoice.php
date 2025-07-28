@@ -181,7 +181,7 @@ class Quote_To_Invoice {
 		$this->loader->add_action( 'init', $plugin_public, 'register_shortcodes' );
 		$this->loader->add_action( 'init', $plugin_public, 'process_quote_request' );
 		$this->loader->add_action( 'qti_new_quote', $plugin_public, 'send_new_quote_notifications' );
-		$this->loader->add_filter( 'theme_page_templates', $plugin_public, 'register_page_templates' );
+		$this->loader->add_filter( 'page_template_dropdown_settings', $plugin_public, 'register_page_templates' );
 		$this->loader->add_filter( 'template_include', $plugin_public, 'load_page_template' );
 		$this->loader->add_action( 'init', $plugin_public, 'process_payment' );
 		$this->loader->add_action( 'init', $plugin_public, 'generate_invoice' );
