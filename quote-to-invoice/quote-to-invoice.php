@@ -61,3 +61,11 @@ function run_quote_to_invoice() {
 
 }
 run_quote_to_invoice();
+
+function qti_get_customer_dashboard_url() {
+	$page = get_page_by_title( 'Customer Dashboard' );
+	if ( $page ) {
+		return get_permalink( $page->ID );
+	}
+	return '';
+}
