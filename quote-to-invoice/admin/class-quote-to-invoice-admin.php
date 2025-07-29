@@ -321,4 +321,27 @@ class Quote_To_Invoice_Admin {
 		<?php
 	}
 
+	/**
+	 * Add the dashboard widget.
+	 *
+	 * @since    1.0.0
+	 */
+	public function add_dashboard_widget() {
+		wp_add_dashboard_widget(
+			'qti_customer_dashboard_widget',
+			__( 'Customer Dashboard', 'quote-to-invoice' ),
+			array( $this, 'display_dashboard_widget' )
+		);
+	}
+
+	/**
+	 * Display the dashboard widget.
+	 *
+	 * @since    1.0.0
+	 */
+	public function display_dashboard_widget() {
+		echo do_shortcode( '[customer_quotes]' );
+		echo do_shortcode( '[customer_orders]' );
+	}
+
 }

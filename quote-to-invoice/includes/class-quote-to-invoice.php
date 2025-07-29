@@ -161,6 +161,7 @@ class Quote_To_Invoice {
 		$this->loader->add_action( 'add_meta_boxes', $plugin_admin, 'add_nanny_meta_box' );
 		$this->loader->add_action( 'save_post_qti_order', $plugin_admin, 'save_nanny' );
 		$this->loader->add_action( 'add_meta_boxes', $plugin_admin, 'add_invoice_meta_box' );
+		$this->loader->add_action( 'wp_dashboard_setup', $plugin_admin, 'add_dashboard_widget' );
 
 	}
 
