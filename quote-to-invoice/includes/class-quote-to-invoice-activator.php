@@ -161,6 +161,7 @@ class Quote_To_Invoice_Activator {
 				'post_status'  => 'publish',
 				'post_type'    => 'page',
 			) );
+			update_option( 'qti_customer_dashboard_page_id', $page_id );
 		}
 
 		$page_title = 'Customer Dashboard';
