@@ -29,9 +29,9 @@ if ( $customer ) {
 						<td>$<?php echo number_format( $quote->quote_total, 2 ); ?></td>
 						<td><?php echo $quote->status; ?></td>
 						<td>
-							<a href="<?php echo esc_url( add_query_arg( array( 'view_quote' => $quote->id ) ) ); ?>" class="button"><?php _e( 'View', 'quote-to-invoice' ); ?></a>
+							<a href="<?php echo esc_url( add_query_arg( array( 'view_quote' => $quote->id ), get_permalink( get_page_by_path( 'customer-dashboard' ) ) ) ); ?>" class="button"><?php _e( 'View', 'quote-to-invoice' ); ?></a>
 							<?php if ( $quote->status === 'pending' ) : ?>
-								<a href="<?php echo esc_url( add_query_arg( array( 'accept_quote' => $quote->id ) ) ); ?>" class="button"><?php _e( 'Accept', 'quote-to-invoice' ); ?></a>
+								<a href="<?php echo esc_url( add_query_arg( array( 'accept_quote' => $quote->id ), get_permalink( get_page_by_path( 'customer-dashboard' ) ) ) ); ?>" class="button"><?php _e( 'Accept', 'quote-to-invoice' ); ?></a>
 							<?php endif; ?>
 						</td>
 					</tr>
